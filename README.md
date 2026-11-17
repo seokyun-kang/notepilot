@@ -17,6 +17,8 @@ uv tool install git+https://github.com/seokyun-kang/notepilot
 pipx install git+https://github.com/seokyun-kang/notepilot
 ```
 
+설치 후 `notepilot`을 찾을 수 없다고 나오면 `uv tool update-shell`(pipx는 `pipx ensurepath`)을 실행하고 터미널을 다시 연다.
+
 도구 자체의 업데이트는 `uv tool upgrade notepilot` 또는 `pipx upgrade notepilot`이다.
 
 ## 시작

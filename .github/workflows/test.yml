@@ -8,6 +8,10 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
         python: ["3.9", "3.13"]
+        exclude:
+          # setup-python offers no 3.9 build for the current ubuntu-latest; 3.9 is covered on macOS and Windows.
+          - os: ubuntu-latest
+            python: "3.9"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

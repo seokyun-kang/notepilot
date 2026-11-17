@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "notepilot"
+dynamic = ["version"]
+description = "에이전트와 함께 쓰는 Markdown 노트 보관함 구성·점검 도구 (Obsidian·GitHub 호환)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+authors = [{ name = "Seokyun Kang" }]
+keywords = ["notes", "obsidian", "markdown", "agents", "claude-code", "codex", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Natural Language :: Korean",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+
+[project.urls]
+Repository = "https://github.com/seokyun-kang/notepilot"
+Issues = "https://github.com/seokyun-kang/notepilot/issues"
+Changelog = "https://github.com/seokyun-kang/notepilot/blob/main/CHANGELOG.md"
+
+[project.scripts]
+notepilot = "notepilot.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "notepilot.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+notepilot = ["data/*.md", "data/*/*.md"]
